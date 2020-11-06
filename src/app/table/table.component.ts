@@ -10,22 +10,19 @@ import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 })
 export class TableComponent implements OnInit {
   employeeData?: EmployeeData[];
+  employeesLen?: number;
+  returnedArray?: EmployeeData[] | undefined;
+  pages?: number;
   currentPage = 1;
-  employees?: number;
-  // contentArray = new Array(90).fill('');
-  returnedArray?: EmployeeData[];
 
   constructor(private employeeService: EmployeeService) {
   }
 
   ngOnInit(): void {
     this.employeeService.getEmployeeData().subscribe(data => {
-      this.employees = data.data?.employees.length;
-      console.log(data.data?.employees);
+      this.employeesLen = data.data?.employees.length;
       this.employeeData = data.data?.employees;
-      // @ts-ignore
-      console.log(this.employeeData[0].department.name_FL);
-      console.log(this.employees);
+      this.returnedArray = this.employeeData?.slice(0, 10);
     });
   }
 
@@ -33,5 +30,11 @@ export class TableComponent implements OnInit {
     const startItem = (event.page - 1) * event.itemsPerPage;
     const endItem = event.page * event.itemsPerPage;
     this.returnedArray = this.employeeData?.slice(startItem, endItem);
+    console.log(event.page);
+    this.currentPage = event.page;
+  }
+
+  numPages(event: number): void {
+    this.pages = event;
   }
 }

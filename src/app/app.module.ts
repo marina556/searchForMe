@@ -15,6 +15,7 @@ import { TableComponent } from './table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { FormsModule } from '@angular/forms';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FormsModule } from '@angular/forms';
     MatTableModule,
     PaginationModule.forRoot(),
     FormsModule,
+    ProgressbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

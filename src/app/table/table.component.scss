@@ -14,4 +14,10 @@ section{
     border-left: 2px red solid;
 
   }
+
+}
+:host ::ng-deep {
+  li.pagination-page.page-item {
+    display: none;
+  }
 }

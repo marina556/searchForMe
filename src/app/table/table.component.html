@@ -10,7 +10,7 @@
     </tr>
     </thead>
     <tbody class="content-wrapper">
-    <tr class="content-item" *ngFor="let employee of employeeData">
+    <tr class="content-item" *ngFor="let employee of returnedArray">
       <td class="first">{{employee.fullName_FL}}</td>
       <td>{{employee.department?.name_FL}}</td>
       <td>{{employee.hiringDate}}</td>
@@ -18,53 +18,13 @@
       <td>Terminate</td>
     </tr>
     </tbody>
-<!--    <tfoot>-->
-<!--    <tr>-->
-<!--      &lt;!&ndash;    <th class="first" scope="col">Name</th>&ndash;&gt;-->
-<!--      &lt;!&ndash;    <th scope="col">Title</th>&ndash;&gt;-->
-<!--      &lt;!&ndash;    <th scope="col">Hiring date</th>&ndash;&gt;-->
-<!--      &lt;!&ndash;    <th scope="col">Salary</th>&ndash;&gt;-->
-<!--      <td scope="col" colspan="4">-->
-<!--      </td>-->
-
-<!--    </tr>-->
-<!--    </tfoot>-->
   </table>
-  <pagination *ngIf="employees" [totalItems]="employees" (pageChanged)="pageChanged($event)"></pagination>
-
 </section>
-<!--<section>-->
-<!--  <table class="table table-striped" [mfData]="employeeData" #mf="mfDataTable" [mfRowsOnPage]="5">-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--      <th style="width: 20%">-->
-<!--        <mfDefaultSorter by="name">Name</mfDefaultSorter>-->
-<!--      </th>-->
-<!--      <th style="width: 50%">-->
-<!--        <mfDefaultSorter by="email">Email</mfDefaultSorter>-->
-<!--      </th>-->
-<!--      <th style="width: 10%">-->
-<!--        <mfDefaultSorter by="age">Age</mfDefaultSorter>-->
-<!--      </th>-->
-<!--      <th style="width: 20%">-->
-<!--        <mfDefaultSorter by="city">City</mfDefaultSorter>-->
-<!--      </th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    <tr *ngFor="let item of mf.data">-->
-<!--      <td>{{item.name}}</td>-->
-<!--      <td>{{item.email}}</td>-->
-<!--      <td class="text-right">{{item.age}}</td>-->
-<!--      <td>{{item.city | uppercase}}</td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--    <tfoot>-->
-<!--    <tr>-->
-<!--      <td colspan="4">-->
-<!--        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>-->
-<!--      </td>-->
-<!--    </tr>-->
-<!--    </tfoot>-->
-<!--  </table>-->
-<!--</section>-->
+<pagination *ngIf="employeesLen"
+            [totalItems]="employeesLen"
+            (numPages)="numPages($event)"
+            (pageChanged)="pageChanged($event)"></pagination>
+<p *ngIf="pages">page {{currentPage}}/{{ pages}}</p>
+<div class="mb-2">
+  <progressbar *ngIf="currentPage&&pages" [max]="pages" [value]="currentPage" [animate]="true"></progressbar>
+</div>

@@ -1,0 +1,17 @@
+
+section{
+  border: 2px red solid;
+  border-radius: 10px;
+  margin: 15px;
+  table {
+    width: 100%;
+    margin: 0;
+  }
+  thead{
+    border-bottom: 2px red solid;
+  }
+  td:not(.first),th:not(.first){
+    border-left: 2px red solid;
+
+  }
+}

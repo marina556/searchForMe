@@ -11,5 +11,4 @@ export interface EmployeeData {
   position: Position;
   department: Department;
   employeeJobStatuses: EmployeeJobStatuses;
-
 }

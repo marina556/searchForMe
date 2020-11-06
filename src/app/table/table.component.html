@@ -18,19 +18,20 @@
       <td>Terminate</td>
     </tr>
     </tbody>
-    <tfoot>
-    <tr>
-      <!--    <th class="first" scope="col">Name</th>-->
-      <!--    <th scope="col">Title</th>-->
-      <!--    <th scope="col">Hiring date</th>-->
-      <!--    <th scope="col">Salary</th>-->
-      <td scope="col" colspan="4">
-        <pagination *ngIf="employees" [totalItems]="employees" (pageChanged)="pageChanged($event)"></pagination>
-      </td>
+<!--    <tfoot>-->
+<!--    <tr>-->
+<!--      &lt;!&ndash;    <th class="first" scope="col">Name</th>&ndash;&gt;-->
+<!--      &lt;!&ndash;    <th scope="col">Title</th>&ndash;&gt;-->
+<!--      &lt;!&ndash;    <th scope="col">Hiring date</th>&ndash;&gt;-->
+<!--      &lt;!&ndash;    <th scope="col">Salary</th>&ndash;&gt;-->
+<!--      <td scope="col" colspan="4">-->
+<!--      </td>-->
 
-    </tr>
-    </tfoot>
+<!--    </tr>-->
+<!--    </tfoot>-->
   </table>
+  <pagination *ngIf="employees" [totalItems]="employees" (pageChanged)="pageChanged($event)"></pagination>
+
 </section>
 <!--<section>-->
 <!--  <table class="table table-striped" [mfData]="employeeData" #mf="mfDataTable" [mfRowsOnPage]="5">-->

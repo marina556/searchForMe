@@ -21,31 +21,85 @@
 }
 
 :host ::ng-deep {
+  p.ng-star-inserted {
+    text-align: end;
+  }
+
+  .pagination {
+    justify-content: flex-end;
+  }
+
   li.pagination-page.page-item {
     display: none;
   }
-  select{
+
+  select {
     background-color: white;
     border: 0;
     outline: 0;
+    padding: 0 10px;
   }
 
-   button {
+  button {
     border: 2px solid lightblue;
     border-radius: 7px;
     outline: 0;
     background-color: white;
     //height: 30px;
-    margin:0 5px;
+    margin: 0 5px;
 
-     fa-icon{
+    fa-icon {
       //font-size: 18px;
       color: lightblue;
-       margin: 0 5px;
-    }  svg.svg-inline--fa.fa-download.fa-w-16{
+      margin: 0 5px;
+    }
+
+    svg.svg-inline--fa.fa-download.fa-w-16 {
       //font-size: 18px;
       color: black;
     }
 
+  }
+
+  a.page-link, .page-item.disabled .page-link {
+    border: none;
+    background: none;
+    color: gray;
+
+  }
+
+a.page-link{
+  position: relative;
+}
+  a.page-link{
+    &::after{
+      position: absolute;
+      top: -1px;
+      font-size: 24px;
+      color: lightblue;
+      display: block;
+    }
+  }
+  li.pagination-next.page-item.ng-star-inserted a.page-link{
+    &::after {
+      content: '»';
+      right: -3px;
+    }
+  }
+
+  li.pagination-prev.page-item.ng-star-inserted a.page-link{
+    &::after {
+      content: "«";
+      left: -3px;
+    }
+  }
+  progressbar.progress.ng-star-inserted {
+    width: 95%;
+    display: flex;
+    margin: auto;
+  }
+  ul.pagination{
+    margin: 0;
+    padding: 0;
   }
 }

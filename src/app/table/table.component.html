@@ -1,19 +1,27 @@
 <section class="m-3">
   <span>Show</span>
-  <button><select (change)="selectChangeHandler($event)">
+  <button><select aria-label="select" (change)="selectChangeHandler($event)">
     <option value="10">10</option>
     <option value="20">20</option>
     <option value="30">30</option>
     <option value="40">40</option>
     <option value="50">50</option>
   </select></button>
-  <button><fa-icon [icon]="faFolderPlus"></fa-icon> Employee</button>
-  <button><fa-icon [icon]="faFolderPlus"></fa-icon> Add Filter</button>
-  <button>Export <fa-icon [icon]="export"></fa-icon></button>
+  <button>
+    <fa-icon [icon]="faFolderPlus"></fa-icon>
+    Employee
+  </button>
+  <button>
+    <fa-icon [icon]="faFolderPlus"></fa-icon>
+    Add Filter
+  </button>
+  <button>Export
+    <fa-icon [icon]="export"></fa-icon>
+  </button>
 </section>
 
 <section class="table-container">
-  <table class="table table-borderless">
+  <table class="table table-borderless table-responsive-lg">
     <thead>
     <tr>
       <th class="first" scope="col">Name</th>
@@ -34,10 +42,18 @@
     </tbody>
   </table>
 </section>
-<pagination *ngIf="employeesLen"
-            [totalItems]="employeesLen"
-            (pageChanged)="pageChanged($event)"></pagination>
-<p *ngIf="pages">page {{currentPage}}/{{ pages}}</p>
-<div class="mb-2">
-  <progressbar *ngIf="currentPage&&pages" [max]="pages" [value]="currentPage" [animate]="true"></progressbar>
-</div>
+<section class="row m-0 ">
+  <div class="mb-3 col-12 col-md-10 mx-md-auto">
+    <progressbar *ngIf="currentPage&&pages" [max]="pages" [value]="currentPage" [animate]="true"></progressbar>
+  </div>
+  <div class="col-12 col-md-2">
+    <div class="row">
+  <pagination class="col-6 col-md-12  mx-md-auto" *ngIf="employeesLen"
+              [totalItems]="employeesLen"
+              (pageChanged)="pageChanged($event)">
+  </pagination>
+  <p class="col-6 col-md-12 mx-md-auto" *ngIf="pages">page {{currentPage}}/{{ pages}}</p>
+    </div>
+  </div>
+
+</section>

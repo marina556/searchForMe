@@ -7,11 +7,11 @@
     <option value="40">40</option>
     <option value="50">50</option>
   </select></button>
-  <button>
-    <fa-icon [icon]="faFolderPlus"></fa-icon>
-    Employee
-  </button>
-  <button>
+<!--  <button>-->
+<!--    <fa-icon [icon]="faFolderPlus"></fa-icon>-->
+<!--    Employee-->
+<!--  </button>-->
+  <button (click)="openDialog()">
     <fa-icon [icon]="faFolderPlus"></fa-icon>
     Add Filter
   </button>
@@ -24,7 +24,13 @@
   <table class="table table-borderless table-responsive-lg">
     <thead>
     <tr>
-      <th class="first" scope="col">Name</th>
+      <th class="first" scope="col">
+        <span>Name</span>
+        <button class="sort-name"  (click)="sortByName()">
+          <fa-icon *ngIf="sortDown" [icon]="faArrowDown"></fa-icon>
+          <fa-icon *ngIf="!sortDown" [icon]="faAngleUp"></fa-icon>
+        </button>
+      </th>
       <th scope="col">Title</th>
       <th scope="col">Hiring date</th>
       <th scope="col">Salary</th>
@@ -48,11 +54,11 @@
   </div>
   <div class="col-12 col-md-2">
     <div class="row">
-  <pagination class="col-6 col-md-12  mx-md-auto" *ngIf="employeesLen"
-              [totalItems]="employeesLen"
-              (pageChanged)="pageChanged($event)">
-  </pagination>
-  <p class="col-6 col-md-12 mx-md-auto" *ngIf="pages">page {{currentPage}}/{{ pages}}</p>
+      <pagination class="col-6 col-md-12  mx-md-auto" *ngIf="employeesLen"
+                  [totalItems]="employeesLen"
+                  (pageChanged)="pageChanged($event)">
+      </pagination>
+      <p class="col-6 col-md-12 mx-md-auto" *ngIf="pages">page {{currentPage}}/{{ pages}}</p>
     </div>
   </div>
 

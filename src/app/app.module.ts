@@ -14,16 +14,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { TableComponent } from './table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { FilterComponent } from './filter/filter.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
     TableComponent,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,9 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     FormsModule,
     ProgressbarModule,
     FontAwesomeModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

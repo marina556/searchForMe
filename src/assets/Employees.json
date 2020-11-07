@@ -88,7 +88,7 @@
         "fullName_FL": "Emp FN FL3 Emp SN FL3 Emp LN FL3 Emp FMN FL3",
         "fullName_SL": "Emp FN SL3 Emp SN SL3 Emp LN SL3 Emp FMN SL3",
         "hiringDate": "2020-06-10T10:30:26.2155911",
-        "firstContractingSalary": "2500",
+        "firstContractingSalary": "250",
         "position": {
           "id": "2bf35199-fa54-49c9-94ad-08d80d160f26",
           "name_FL": "Main Position ",
@@ -115,7 +115,7 @@
         "fullName_FL": "Emp FN FL4 Emp SN FL4 Emp LN FL4 Emp FMN FL4",
         "fullName_SL": "Emp FN SL4 Emp SN SL4 Emp LN SL4 Emp FMN SL4",
         "hiringDate": "2020-06-10T10:30:29.8737524",
-        "firstContractingSalary": "2500",
+        "firstContractingSalary": "500",
         "position": {
           "id": "2bf35199-fa54-49c9-94ad-08d80d160f26",
           "name_FL": "Main Position ",
@@ -142,7 +142,7 @@
         "fullName_FL": "Emp FN FL5 Emp SN FL5 Emp LN FL5 Emp FMN FL5",
         "fullName_SL": "Emp FN SL5 Emp SN SL5 Emp LN SL5 Emp FMN SL5",
         "hiringDate": "2020-06-10T10:30:34.7847008",
-        "firstContractingSalary": "2500",
+        "firstContractingSalary": "200",
         "position": {
           "id": "2bf35199-fa54-49c9-94ad-08d80d160f26",
           "name_FL": "Main Position ",

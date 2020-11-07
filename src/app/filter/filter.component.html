@@ -1,0 +1,32 @@
+<!--<h1 mat-dialog-title>Hi</h1>-->
+<div mat-dialog-content>
+  <form [formGroup]="filterForm" (ngSubmit)="handleSubmit()">
+    <span class="mr-2">Add Filter</span>
+<!--    (change)="searchBy($event)"-->
+    <select aria-label="select" formControlName="searchBy">
+      <option value="salary">salary</option>
+      <option value="name">name</option>
+      <option value="hiring date">hiring date</option>
+    </select>
+<!--    (change)="searchRange($event)"-->
+  <select *ngIf="filterForm.value['searchBy'] !== 'name'" class="mt-2" aria-label="select" formControlName="searchRange">
+      <option value="Between">Between</option>
+      <option value="before">before</option>
+      <option value="after">after</option>
+    </select>
+    <div class="d-flex mt-2" *ngIf="filterForm.value['searchBy'] !== 'name'">
+    <input formControlName="minRange" type="number">
+    <span class="mx-2">and</span>
+    <input formControlName="maxRange" type="number">
+    </div>
+    <div *ngIf="filterForm.value['searchBy'] === 'name'" class=" mt-2">
+      <input style="width: 90%" type="text" formControlName="name">
+    </div>
+    <div mat-dialog-actions class="mt-4 mx-auto">
+      <button mat-button (click)="onNoClick()">Cancel</button>
+      <button mat-button type="submit">Submit</button>
+    </div>
+  </form>
+
+</div>
+

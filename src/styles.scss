@@ -37,3 +37,20 @@ $searchForMe-theme: mat-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+  div#cdk-overlay-0,mat-dialog-container#mat-dialog-0{
+    height: 250px !important;
+  }
+  form.ng-pristine.ng-valid.ng-touched,form.ng-pristine.ng-valid,.mat-dialog-content{
+    height: 200px;
+  }
+  div#cdk-overlay-0,mat-dialog-container#mat-dialog-0{
+    height: 250px !important;
+    //border: 1px solid gray;
+    border-radius: 15px;
+  }
+
+.mat-dialog-actions.mt-4.mx-auto{
+  justify-content: center;
+}

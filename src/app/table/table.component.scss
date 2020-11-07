@@ -1,23 +1,51 @@
 
-section{
-  border: 2px red solid;
+.table-container {
+  border: 2px lightblue solid;
   border-radius: 10px;
   margin: 15px;
+
   table {
     width: 100%;
     margin: 0;
   }
-  thead{
-    border-bottom: 2px red solid;
+
+  thead {
+    border-bottom: 2px lightblue solid;
   }
-  td:not(.first),th:not(.first){
-    border-left: 2px red solid;
+
+  td:not(.first), th:not(.first) {
+    border-left: 2px lightblue solid;
 
   }
 
 }
+
 :host ::ng-deep {
   li.pagination-page.page-item {
     display: none;
+  }
+  select{
+    background-color: white;
+    border: 0;
+    outline: 0;
+  }
+
+   button {
+    border: 2px solid lightblue;
+    border-radius: 7px;
+    outline: 0;
+    background-color: white;
+    //height: 30px;
+    margin:0 5px;
+
+     fa-icon{
+      //font-size: 18px;
+      color: lightblue;
+       margin: 0 5px;
+    }  svg.svg-inline--fa.fa-download.fa-w-16{
+      //font-size: 18px;
+      color: black;
+    }
+
   }
 }

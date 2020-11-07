@@ -16,6 +16,8 @@ import { MatTableModule } from '@angular/material/table';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { FormsModule } from '@angular/forms';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
     PaginationModule.forRoot(),
     FormsModule,
     ProgressbarModule,
+    FontAwesomeModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

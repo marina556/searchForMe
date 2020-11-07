@@ -1,4 +1,18 @@
-<section>
+<section class="m-3">
+  <span>Show</span>
+  <button><select (change)="selectChangeHandler($event)">
+    <option value="10">10</option>
+    <option value="20">20</option>
+    <option value="30">30</option>
+    <option value="40">40</option>
+    <option value="50">50</option>
+  </select></button>
+  <button><fa-icon [icon]="faFolderPlus"></fa-icon> Employee</button>
+  <button><fa-icon [icon]="faFolderPlus"></fa-icon> Add Filter</button>
+  <button>Export <fa-icon [icon]="export"></fa-icon></button>
+</section>
+
+<section class="table-container">
   <table class="table table-borderless">
     <thead>
     <tr>
@@ -22,7 +36,6 @@
 </section>
 <pagination *ngIf="employeesLen"
             [totalItems]="employeesLen"
-            (numPages)="numPages($event)"
             (pageChanged)="pageChanged($event)"></pagination>
 <p *ngIf="pages">page {{currentPage}}/{{ pages}}</p>
 <div class="mb-2">
